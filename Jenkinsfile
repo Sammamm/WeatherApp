@@ -9,7 +9,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        bat 'echo \'building...\''
+        bat 'docker build -t react-docker .'
       }
     }
 
