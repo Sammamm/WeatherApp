@@ -8,7 +8,7 @@ import {
   OW_API,
   OW_API_URL,
 } from "./api";
-import Forecast from "./Forecast/forecast";
+import Forecast from "./Forecast/Forecast";
 
 
 
