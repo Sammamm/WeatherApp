@@ -12,7 +12,7 @@ COPY package*.json ./
 RUN npm install
 
 # copies other files
-COPY ..
+COPY . .
 
 # exposes it to port 5173
 EXPOSE 5173
