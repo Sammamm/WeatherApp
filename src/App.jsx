@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import Search from "./components/search/Search";
+import Search from "./components/search/search";
 import CurrWeather from "./currWeather/CurrWeather";
 import {
   GEO_API_URL,
