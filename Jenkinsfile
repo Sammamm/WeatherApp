@@ -10,6 +10,7 @@ pipeline {
     stage('Build') {
       steps {
         bat 'docker build -t react-docker .'
+        bat 'docker run -it react-docker'
       }
     }
 
