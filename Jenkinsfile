@@ -16,10 +16,8 @@ pipeline {
 
     stage('Test') {
       steps { 
-        // Move docker.image inside the Test stage
-        script {
-            bat 'npm test'
-        }
+          bat 'npm i vitest'
+          bat 'npm test'
       }
     }
 
