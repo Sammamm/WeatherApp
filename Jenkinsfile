@@ -16,7 +16,12 @@ pipeline {
 
     stage('Test') {
       steps { 
-        docker.image('react-docker').inside { sh 'npm test'}
+        // Move docker.image inside the Test stage
+        script {
+          docker.image('react-docker').inside { 
+            sh 'npm test'
+          }
+        }
       }
     }
 
