@@ -15,9 +15,11 @@ pipeline {
     }
 
     stage('Test') {
-      agent {
-        steps { docker.image('react-docker').inside { sh 'npm test' }
-      }
+        steps { 
+          docker.image('react-docker').inside { sh 'npm test'}
+        }
+    }
+      
 
         stage('Deploy') {
           steps {
