@@ -15,16 +15,16 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        bat 'npm test'
+      agent {
+        steps { docker.image('react-docker').inside { sh 'npm test' }
       }
-    }
 
-    stage('Deploy') {
-      steps {
-        bat 'echo \'Deploying...\''
-      }
+        stage('Deploy') {
+          steps {
+            bat 'echo \'Deploying...\''
+          }
+        }
     }
-
-  }
+}
+}
 }
