@@ -10,22 +10,24 @@ pipeline {
     stage('Build') {
       steps {
         bat 'docker build -t react-docker .'
-        bat 'docker run -dp 5173:5173 react-docker'
+        bat 'docker run -d react-docker'
       }
     }
 
     stage('Test') {
-      steps { 
-          bat 'npm i vitest'
-          bat 'npm test'
-      }
       post {
-          success{
-              bat 'echo \'Successful Testing\'' 
-          }
-          failure{
-              bat 'echo \'Failed\'' 
-          }
+        success {
+          bat 'echo \'Successful Testing\''
+        }
+
+        failure {
+          bat 'echo \'Failed\''
+        }
+
+      }
+      steps {
+        bat 'npm i vitest'
+        bat 'npm test'
       }
     }
 
@@ -34,5 +36,6 @@ pipeline {
         bat 'echo \'Deploying...\''
       }
     }
+
   }
 }
