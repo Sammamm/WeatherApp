@@ -33,7 +33,7 @@ pipeline {
 
     stage('Code Analyze') {
       steps {
-        bat 'sh \'npm run format \''
+        bat 'npm run format'
       }
     }
 
