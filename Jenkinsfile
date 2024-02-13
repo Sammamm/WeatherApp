@@ -10,7 +10,6 @@ pipeline {
     stage('Build') {
       steps {
         bat 'docker build -t react-docker .'
-        bat 'docker run -d react-docker'
       }
     }
 
@@ -34,6 +33,12 @@ pipeline {
     stage('Code Analyze') {
       steps {
         bat 'npm run format'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        bat 'docker run -dp 5173:5173 react-docker'
       }
     }
 
