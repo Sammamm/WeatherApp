@@ -31,9 +31,9 @@ pipeline {
       }
     }
 
-    stage('Deploy') {
+    stage('Code Analyze') {
       steps {
-        bat 'echo \'Deploying...\''
+        bat 'sh \'npm run format \''
       }
     }
 
