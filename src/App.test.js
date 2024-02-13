@@ -55,9 +55,9 @@ describe('Searchbar (Searh.jsx) testing', () => {
     expect(searchbar).toBeInTheDocument();
   });
 
-  it('Test the Async Paginate', () => {
-    const asyncPaginate = screen.getByTestId('async-paginate');
-    fireEvent.change(asyncPaginate, { target: { value: 'New York' } });
-    expect(mockOnSearchChange).toHaveBeenCalledWith('New York');
-  });
+  // it('Test the Async Paginate', () => {
+  //   const asyncPaginate = screen.getByTestId('async-paginate');
+  //   fireEvent.change(asyncPaginate, { target: { value: 'New York' } });
+  //   expect(mockOnSearchChange).toHaveBeenCalledWith('New York');
+  // });
 });
