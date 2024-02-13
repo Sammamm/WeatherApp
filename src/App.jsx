@@ -1,16 +1,9 @@
-import "./App.css";
-import { useState } from "react";
-import Search from "./components/search/search";
-import CurrWeather from "./currWeather/CurrWeather";
-import {
-  GEO_API_URL,
-  geoApiOptions,
-  OW_API,
-  OW_API_URL,
-} from "./api";
-import Forecast from "./Forecast/Forecast";
-
-
+import './App.css';
+import { useState } from 'react';
+import Search from './components/search/search';
+import CurrWeather from './currWeather/CurrWeather';
+import { GEO_API_URL, geoApiOptions, OW_API, OW_API_URL } from './api';
+import Forecast from './Forecast/Forecast';
 
 function App() {
   //   State variable for search value
@@ -23,7 +16,7 @@ function App() {
     try {
       const response = await fetch(
         `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
-        geoApiOptions
+        geoApiOptions,
       );
 
       const result = await response.json();
@@ -43,13 +36,13 @@ function App() {
   //   Value entered in the search bar
   const onSearchChange = (searchValue) => {
     // console.log(searchValue);
-    const [lat, lon] = searchValue.value.split(" ");
+    const [lat, lon] = searchValue.value.split(' ');
 
     const currWeatherFetch = fetch(
-      `${OW_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${OW_API}&units=metric`
+      `${OW_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${OW_API}&units=metric`,
     );
     const currForecastFetch = fetch(
-      `${OW_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${OW_API}&units=metric`
+      `${OW_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${OW_API}&units=metric`,
     );
 
     Promise.all([currWeatherFetch, currForecastFetch]).then(async (res) => {
@@ -60,13 +53,17 @@ function App() {
       setForecast({ city: searchValue.label, ...forecastRes });
     });
 
-    console.log(weather)
-    console.log(forecast)
+    console.log(weather);
+    console.log(forecast);
   };
 
   return (
     <div className="container">
-      <Search search={search} onSearchChange={onSearchChange} loadOptions={loadOptions}/>
+      <Search
+        search={search}
+        onSearchChange={onSearchChange}
+        loadOptions={loadOptions}
+      />
       {weather && <CurrWeather data={weather} />}
       {forecast && <Forecast data={forecast} />}
     </div>

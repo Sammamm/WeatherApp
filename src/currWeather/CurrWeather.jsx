@@ -1,7 +1,7 @@
-import "./currWeather.css";
+import './currWeather.css';
 
-const CurrWeather = ({data}) => {
-  let iconSrc = `./icons/${data.weather[0].icon}.png`
+const CurrWeather = ({ data }) => {
+  let iconSrc = `./icons/${data.weather[0].icon}.png`;
   return (
     <div className="weather">
       <div className="top">
@@ -23,7 +23,9 @@ const CurrWeather = ({data}) => {
 
           <div className="parameter">
             <div className="parameter-name">Feels like</div>
-            <div className="parameter-value">{Math.round(data.main.feels_like)}°C</div>
+            <div className="parameter-value">
+              {Math.round(data.main.feels_like)}°C
+            </div>
           </div>
 
           <div className="parameter">
@@ -33,7 +35,9 @@ const CurrWeather = ({data}) => {
 
           <div className="parameter">
             <div className="parameter-name">Humidity</div>
-            <div className="parameter-value">{data.main.humidity} g/m<sup>3</sup></div>
+            <div className="parameter-value">
+              {data.main.humidity} g/m<sup>3</sup>
+            </div>
           </div>
 
           <div className="parameter">

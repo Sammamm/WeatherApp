@@ -1,52 +1,53 @@
-.weather{
-    width: 300px;
-    border-radius: 6px;
-    box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
-    padding: 0px 20px 20px 20px;
-    color: #fff;
-    background-color: #333;
-    margin: 20px auto 20px auto;
+.weather {
+  width: 300px;
+  border-radius: 6px;
+  box-shadow: 10px -2px 20px 2px rgb(0 0 0 / 30%);
+  padding: 0px 20px 20px 20px;
+  color: #fff;
+  background-color: #333;
+  margin: 20px auto 20px auto;
 }
 
-.weatherIcon{
-    width: 100px;
+.weatherIcon {
+  width: 100px;
 }
 
-
-.city{
-    font-size: 32px;
-    line-height: 1;
-    margin: 1;
+.city {
+  font-size: 32px;
+  line-height: 1;
+  margin: 1;
 }
 
-.weatherDesc{
-    font-size: 18px;
-    line-height: 1;
-    margin: 2px;
+.weatherDesc {
+  font-size: 18px;
+  line-height: 1;
+  margin: 2px;
 }
 
-.top, .bottom{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-around;
+.top,
+.bottom {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.temprature h1{
-    font-size: 70px;
+.temprature h1 {
+  font-size: 70px;
 }
 
-.parameter{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.parameter {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.parameter-name, .parameter-value{
-    padding: 2px 12px;
-    font-size: 12px;
+.parameter-name,
+.parameter-value {
+  padding: 2px 12px;
+  font-size: 12px;
 }
 
-.parameter-value{
-    font-weight: 600;
+.parameter-value {
+  font-weight: 600;
 }
