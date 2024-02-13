@@ -38,7 +38,7 @@ pipeline {
 
     stage('Deploy') {
       steps {
-        bat 'docker run -dp 5173:5173 react-docker'
+        bat 'docker-compose up -d'
       }
     }
 
