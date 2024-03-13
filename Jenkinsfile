@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Code') {
       steps {
-        git(url: 'https://github.com/Sammamm/WeatherApp', branch: 'main')
+        git(url: 'https://github.com/Sammamm/WeatherApp.git', branch: 'main')
       }
     }
 
